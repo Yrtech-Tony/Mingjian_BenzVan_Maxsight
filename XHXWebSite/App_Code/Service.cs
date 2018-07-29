@@ -2273,6 +2273,51 @@ public class Service : System.Web.Services.WebService
         CommonHandler.query(sql);
     }
     #endregion
+    #region 经销商录音管理
+    #region 经销商录音设置
+    [WebMethod]
+    public void SaveShopRecordUrl(string projectCode, string shopCode, string recordUrl, string password, string userId)
+    {
+        string sql = string.Format("EXEC ShopRecord_S '{0}','{1}','{2}','{3}','{4}'",
+                                   projectCode, shopCode, recordUrl, password, userId);
+        CommonHandler.query(sql);
+    }
+    [WebMethod]
+    public DataSet SearchShopRecordUrlList(string projectCode, string shopCode)
+    {
+        string sql = string.Format("EXEC up_DSAT_ShopRecord_R '{0}','{1}'",
+                                   projectCode, shopCode);
+        return CommonHandler.query(sql);
+    }
+    #endregion
+    #region 经销商录音下载
+
+    #endregion
+
+    #endregion
+    #region 账号和经销商匹配管理
+    [WebMethod]
+    public void SaveUserInfoShop(string projectCode, string userId, string shopCode, string inUserId, char statusType)
+    {
+        string sql = string.Format("EXEC UserInfoShop_S '{0}','{1}','{2}','{3}'",
+                                   projectCode, shopCode, userId, inUserId);
+        CommonHandler.query(sql);
+    }
+    [WebMethod]
+    public DataSet SearchUserInfoShopList(string projectCode, string shopCode, string userId)
+    {
+        string sql = string.Format("EXEC UserInfoShop_R '{0}','{1}','{2}'",
+                                   projectCode, shopCode, userId);
+        return CommonHandler.query(sql);
+    }
+    [WebMethod]
+    public DataSet SearchUserInfoAll(string projectCode)
+    {
+        string sql = string.Format("EXEC UserInfo_All_R '{0}'",
+                                   projectCode);
+        return CommonHandler.query(sql);
+    }
+    #endregion
     #endregion
     #endregion
     #endregion
