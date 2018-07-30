@@ -16,6 +16,7 @@ namespace XHX.View
     {
         #region Field
         XtraGridDataHandler<UserInfoShopDto> dataHandler = null;
+        string _ProjectCode = "";
         localhost.Service webService = new localhost.Service();
         MSExcelUtil msExcelUtil = new MSExcelUtil();
         GridCheckMarksSelection selection;
@@ -51,9 +52,9 @@ namespace XHX.View
         }
         private void BindUserCombox()
         {
-            string prjectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
+           // string prjectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
             List<UserInfoDto> list = new List<UserInfoDto>();
-            DataSet ds = webService.SearchUserInfoAll(prjectCode);
+            DataSet ds = webService.SearchUserInfoAll(_ProjectCode);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -82,10 +83,10 @@ namespace XHX.View
         private void SearchResult()
         {
 
-            string prjectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
+           // string prjectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
             string shopCode = btnShopCode.Text;
             List<UserInfoShopDto> list = new List<UserInfoShopDto>();
-            DataSet ds = webService.SearchUserInfoShopList(prjectCode, shopCode, CommonHandler.GetComboBoxSelectedValue(cboUserId).ToString());
+            DataSet ds = webService.SearchUserInfoShopList(_ProjectCode, shopCode, CommonHandler.GetComboBoxSelectedValue(cboUserId).ToString());
             if (ds.Tables[0].Rows.Count > 0)
             {
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -118,7 +119,7 @@ namespace XHX.View
         /// <param name="e"></param>
         private void btnShopCode_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
-            Shop_Popup pop = new Shop_Popup("", "", false, "", UserInfoDto, "");
+            Shop_Popup pop = new Shop_Popup("", "", false);
             pop.ShowDialog();
             ShopDto dto = pop.Shopdto;
             if (dto != null)
@@ -143,7 +144,7 @@ namespace XHX.View
                 {
                     foreach (UserInfoShopDto shop in dataHandler.DataList)
                     {
-                        webService.SaveUserInfoShop(CommonHandler.GetComboBoxSelectedValue(cboProject).ToString(), shop.UserId, shop.ShopCode, UserInfoDto.UserID,shop.StatusType);
+                        webService.SaveUserInfoShop(_ProjectCode, shop.UserId, shop.ShopCode, UserInfoDto.UserID, shop.StatusType);
                     }
                 }
                 CommonHandler.ShowMessage(MessageType.Information, "±£´æÍê±Ï");
@@ -212,6 +213,26 @@ namespace XHX.View
 
         private void cboProject_SelectedIndexChanged(object sender, EventArgs e)
         {
+            string projectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
+            if (projectCode == "2017Q1") {
+                _ProjectCode = "VAN170401";
+            }
+            else if (projectCode == "2017Q4-2")
+            {
+                _ProjectCode = "VAN170402";
+            }
+            else if (projectCode == "2018Q2")
+            {
+                _ProjectCode = "VAN180201";
+            }
+            else if (projectCode == "20180301")
+            {
+                _ProjectCode = "VAN180301";
+            }
+            else
+            {
+                _ProjectCode = projectCode;
+            }
             BindUserCombox();
         }
 

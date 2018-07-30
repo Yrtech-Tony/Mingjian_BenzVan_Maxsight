@@ -159,6 +159,11 @@ namespace XHX
             mainMenu.DropDownItems.Add(subMenu);
             ms.Items.Add(mainMenu);
 
+            mainMenu = new ToolStripMenuItem("报告平台设置");
+            subMenu = new ToolStripMenuItem("账户经销商设置", null, new EventHandler(menu_Click)); subMenu.Tag = "UserInfoShop";
+            mainMenu.DropDownItems.Add(subMenu);
+            ms.Items.Add(mainMenu);
+
 
             mainMenu = new ToolStripMenuItem("报告");
             //subMenu = new ToolStripMenuItem("数据导入", null, new EventHandler(menu_Click)); subMenu.Tag = "DataTrans";

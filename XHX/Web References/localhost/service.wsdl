@@ -3,6 +3,106 @@
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="SearchSubjectBySubjectCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subjectCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchSubjectBySubjectCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchSubjectBySubjectCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchPassReCheckBySubjectCodeAndShopCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subjectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchPassReCheckBySubjectCodeAndShopCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchPassReCheckBySubjectCodeAndShopCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllArea">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAreaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAreaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllProject">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProjectResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRateAllByProjectCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchRateAllByProjectCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchRateAllByProjectCodeResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SearchRateAllByArea">
         <s:complexType>
           <s:sequence>
@@ -3893,6 +3993,100 @@
       <s:element name="AsyDataResponse">
         <s:complexType />
       </s:element>
+      <s:element name="SaveShopRecordUrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="recordUrl" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveShopRecordUrlResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchShopRecordUrlList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchShopRecordUrlListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchShopRecordUrlListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUserInfoShop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="inUserId" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="statusType" type="s1:char" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveUserInfoShopResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchUserInfoShopList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchUserInfoShopListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchUserInfoShopListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchUserInfoAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchUserInfoAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchUserInfoAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SearchShop">
         <s:complexType>
           <s:sequence>
@@ -4040,106 +4234,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SearchSubjectBySubjectCode">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="subjectCode" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SearchSubjectBySubjectCodeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SearchSubjectBySubjectCodeResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SearchPassReCheckBySubjectCodeAndShopCode">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="subjectCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SearchPassReCheckBySubjectCodeAndShopCodeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SearchPassReCheckBySubjectCodeAndShopCodeResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetAllArea">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetAllAreaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetAllAreaResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="GetAllProject">
-        <s:complexType />
-      </s:element>
-      <s:element name="GetAllProjectResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="GetAllProjectResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SearchRateAllByProjectCode">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SearchRateAllByProjectCodeResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SearchRateAllByProjectCodeResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
     <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
       <s:simpleType name="char">
@@ -4147,6 +4241,36 @@
       </s:simpleType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="SearchSubjectBySubjectCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchSubjectBySubjectCode" />
+  </wsdl:message>
+  <wsdl:message name="SearchSubjectBySubjectCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchSubjectBySubjectCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchPassReCheckBySubjectCodeAndShopCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchPassReCheckBySubjectCodeAndShopCode" />
+  </wsdl:message>
+  <wsdl:message name="SearchPassReCheckBySubjectCodeAndShopCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchPassReCheckBySubjectCodeAndShopCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAreaSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllArea" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAreaSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAreaResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllProject" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchRateAllByProjectCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchRateAllByProjectCode" />
+  </wsdl:message>
+  <wsdl:message name="SearchRateAllByProjectCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchRateAllByProjectCodeResponse" />
+  </wsdl:message>
   <wsdl:message name="SearchRateAllByAreaSoapIn">
     <wsdl:part name="parameters" element="tns:SearchRateAllByArea" />
   </wsdl:message>
@@ -5419,6 +5543,36 @@
   <wsdl:message name="AsyDataSoapOut">
     <wsdl:part name="parameters" element="tns:AsyDataResponse" />
   </wsdl:message>
+  <wsdl:message name="SaveShopRecordUrlSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveShopRecordUrl" />
+  </wsdl:message>
+  <wsdl:message name="SaveShopRecordUrlSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveShopRecordUrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchShopRecordUrlListSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchShopRecordUrlList" />
+  </wsdl:message>
+  <wsdl:message name="SearchShopRecordUrlListSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchShopRecordUrlListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserInfoShopSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveUserInfoShop" />
+  </wsdl:message>
+  <wsdl:message name="SaveUserInfoShopSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveUserInfoShopResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserInfoShopListSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchUserInfoShopList" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserInfoShopListSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchUserInfoShopListResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserInfoAllSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchUserInfoAll" />
+  </wsdl:message>
+  <wsdl:message name="SearchUserInfoAllSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchUserInfoAllResponse" />
+  </wsdl:message>
   <wsdl:message name="SearchShopSoapIn">
     <wsdl:part name="parameters" element="tns:SearchShop" />
   </wsdl:message>
@@ -5461,37 +5615,27 @@
   <wsdl:message name="SearchLeftSoapOut">
     <wsdl:part name="parameters" element="tns:SearchLeftResponse" />
   </wsdl:message>
-  <wsdl:message name="SearchSubjectBySubjectCodeSoapIn">
-    <wsdl:part name="parameters" element="tns:SearchSubjectBySubjectCode" />
-  </wsdl:message>
-  <wsdl:message name="SearchSubjectBySubjectCodeSoapOut">
-    <wsdl:part name="parameters" element="tns:SearchSubjectBySubjectCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="SearchPassReCheckBySubjectCodeAndShopCodeSoapIn">
-    <wsdl:part name="parameters" element="tns:SearchPassReCheckBySubjectCodeAndShopCode" />
-  </wsdl:message>
-  <wsdl:message name="SearchPassReCheckBySubjectCodeAndShopCodeSoapOut">
-    <wsdl:part name="parameters" element="tns:SearchPassReCheckBySubjectCodeAndShopCodeResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetAllAreaSoapIn">
-    <wsdl:part name="parameters" element="tns:GetAllArea" />
-  </wsdl:message>
-  <wsdl:message name="GetAllAreaSoapOut">
-    <wsdl:part name="parameters" element="tns:GetAllAreaResponse" />
-  </wsdl:message>
-  <wsdl:message name="GetAllProjectSoapIn">
-    <wsdl:part name="parameters" element="tns:GetAllProject" />
-  </wsdl:message>
-  <wsdl:message name="GetAllProjectSoapOut">
-    <wsdl:part name="parameters" element="tns:GetAllProjectResponse" />
-  </wsdl:message>
-  <wsdl:message name="SearchRateAllByProjectCodeSoapIn">
-    <wsdl:part name="parameters" element="tns:SearchRateAllByProjectCode" />
-  </wsdl:message>
-  <wsdl:message name="SearchRateAllByProjectCodeSoapOut">
-    <wsdl:part name="parameters" element="tns:SearchRateAllByProjectCodeResponse" />
-  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="SearchSubjectBySubjectCode">
+      <wsdl:input message="tns:SearchSubjectBySubjectCodeSoapIn" />
+      <wsdl:output message="tns:SearchSubjectBySubjectCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPassReCheckBySubjectCodeAndShopCode">
+      <wsdl:input message="tns:SearchPassReCheckBySubjectCodeAndShopCodeSoapIn" />
+      <wsdl:output message="tns:SearchPassReCheckBySubjectCodeAndShopCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllArea">
+      <wsdl:input message="tns:GetAllAreaSoapIn" />
+      <wsdl:output message="tns:GetAllAreaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProject">
+      <wsdl:input message="tns:GetAllProjectSoapIn" />
+      <wsdl:output message="tns:GetAllProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRateAllByProjectCode">
+      <wsdl:input message="tns:SearchRateAllByProjectCodeSoapIn" />
+      <wsdl:output message="tns:SearchRateAllByProjectCodeSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SearchRateAllByArea">
       <wsdl:input message="tns:SearchRateAllByAreaSoapIn" />
       <wsdl:output message="tns:SearchRateAllByAreaSoapOut" />
@@ -6340,6 +6484,26 @@
       <wsdl:input message="tns:AsyDataSoapIn" />
       <wsdl:output message="tns:AsyDataSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SaveShopRecordUrl">
+      <wsdl:input message="tns:SaveShopRecordUrlSoapIn" />
+      <wsdl:output message="tns:SaveShopRecordUrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchShopRecordUrlList">
+      <wsdl:input message="tns:SearchShopRecordUrlListSoapIn" />
+      <wsdl:output message="tns:SearchShopRecordUrlListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfoShop">
+      <wsdl:input message="tns:SaveUserInfoShopSoapIn" />
+      <wsdl:output message="tns:SaveUserInfoShopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserInfoShopList">
+      <wsdl:input message="tns:SearchUserInfoShopListSoapIn" />
+      <wsdl:output message="tns:SearchUserInfoShopListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserInfoAll">
+      <wsdl:input message="tns:SearchUserInfoAllSoapIn" />
+      <wsdl:output message="tns:SearchUserInfoAllSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SearchShop">
       <wsdl:input message="tns:SearchShopSoapIn" />
       <wsdl:output message="tns:SearchShopSoapOut" />
@@ -6368,29 +6532,54 @@
       <wsdl:input message="tns:SearchLeftSoapIn" />
       <wsdl:output message="tns:SearchLeftSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="SearchSubjectBySubjectCode">
-      <wsdl:input message="tns:SearchSubjectBySubjectCodeSoapIn" />
-      <wsdl:output message="tns:SearchSubjectBySubjectCodeSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SearchPassReCheckBySubjectCodeAndShopCode">
-      <wsdl:input message="tns:SearchPassReCheckBySubjectCodeAndShopCodeSoapIn" />
-      <wsdl:output message="tns:SearchPassReCheckBySubjectCodeAndShopCodeSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllArea">
-      <wsdl:input message="tns:GetAllAreaSoapIn" />
-      <wsdl:output message="tns:GetAllAreaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="GetAllProject">
-      <wsdl:input message="tns:GetAllProjectSoapIn" />
-      <wsdl:output message="tns:GetAllProjectSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SearchRateAllByProjectCode">
-      <wsdl:input message="tns:SearchRateAllByProjectCodeSoapIn" />
-      <wsdl:output message="tns:SearchRateAllByProjectCodeSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchSubjectBySubjectCode">
+      <soap:operation soapAction="http://tempuri.org/SearchSubjectBySubjectCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPassReCheckBySubjectCodeAndShopCode">
+      <soap:operation soapAction="http://tempuri.org/SearchPassReCheckBySubjectCodeAndShopCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllArea">
+      <soap:operation soapAction="http://tempuri.org/GetAllArea" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProject">
+      <soap:operation soapAction="http://tempuri.org/GetAllProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRateAllByProjectCode">
+      <soap:operation soapAction="http://tempuri.org/SearchRateAllByProjectCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchRateAllByArea">
       <soap:operation soapAction="http://tempuri.org/SearchRateAllByArea" style="document" />
       <wsdl:input>
@@ -8299,6 +8488,51 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SaveShopRecordUrl">
+      <soap:operation soapAction="http://tempuri.org/SaveShopRecordUrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchShopRecordUrlList">
+      <soap:operation soapAction="http://tempuri.org/SearchShopRecordUrlList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfoShop">
+      <soap:operation soapAction="http://tempuri.org/SaveUserInfoShop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserInfoShopList">
+      <soap:operation soapAction="http://tempuri.org/SearchUserInfoShopList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserInfoAll">
+      <soap:operation soapAction="http://tempuri.org/SearchUserInfoAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchShop">
       <soap:operation soapAction="http://tempuri.org/SearchShop" style="document" />
       <wsdl:input>
@@ -8362,54 +8596,54 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SearchSubjectBySubjectCode">
-      <soap:operation soapAction="http://tempuri.org/SearchSubjectBySubjectCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SearchPassReCheckBySubjectCodeAndShopCode">
-      <soap:operation soapAction="http://tempuri.org/SearchPassReCheckBySubjectCodeAndShopCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllArea">
-      <soap:operation soapAction="http://tempuri.org/GetAllArea" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllProject">
-      <soap:operation soapAction="http://tempuri.org/GetAllProject" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SearchRateAllByProjectCode">
-      <soap:operation soapAction="http://tempuri.org/SearchRateAllByProjectCode" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchSubjectBySubjectCode">
+      <soap12:operation soapAction="http://tempuri.org/SearchSubjectBySubjectCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPassReCheckBySubjectCodeAndShopCode">
+      <soap12:operation soapAction="http://tempuri.org/SearchPassReCheckBySubjectCodeAndShopCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllArea">
+      <soap12:operation soapAction="http://tempuri.org/GetAllArea" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProject">
+      <soap12:operation soapAction="http://tempuri.org/GetAllProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRateAllByProjectCode">
+      <soap12:operation soapAction="http://tempuri.org/SearchRateAllByProjectCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchRateAllByArea">
       <soap12:operation soapAction="http://tempuri.org/SearchRateAllByArea" style="document" />
       <wsdl:input>
@@ -10318,6 +10552,51 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SaveShopRecordUrl">
+      <soap12:operation soapAction="http://tempuri.org/SaveShopRecordUrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchShopRecordUrlList">
+      <soap12:operation soapAction="http://tempuri.org/SearchShopRecordUrlList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUserInfoShop">
+      <soap12:operation soapAction="http://tempuri.org/SaveUserInfoShop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserInfoShopList">
+      <soap12:operation soapAction="http://tempuri.org/SearchUserInfoShopList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchUserInfoAll">
+      <soap12:operation soapAction="http://tempuri.org/SearchUserInfoAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchShop">
       <soap12:operation soapAction="http://tempuri.org/SearchShop" style="document" />
       <wsdl:input>
@@ -10374,51 +10653,6 @@
     </wsdl:operation>
     <wsdl:operation name="SearchLeft">
       <soap12:operation soapAction="http://tempuri.org/SearchLeft" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SearchSubjectBySubjectCode">
-      <soap12:operation soapAction="http://tempuri.org/SearchSubjectBySubjectCode" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SearchPassReCheckBySubjectCodeAndShopCode">
-      <soap12:operation soapAction="http://tempuri.org/SearchPassReCheckBySubjectCodeAndShopCode" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllArea">
-      <soap12:operation soapAction="http://tempuri.org/GetAllArea" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetAllProject">
-      <soap12:operation soapAction="http://tempuri.org/GetAllProject" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SearchRateAllByProjectCode">
-      <soap12:operation soapAction="http://tempuri.org/SearchRateAllByProjectCode" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
