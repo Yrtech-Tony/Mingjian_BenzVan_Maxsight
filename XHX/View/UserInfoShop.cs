@@ -196,7 +196,7 @@ namespace XHX.View
         {
             Workbook workbook = msExcelUtil.OpenExcelByMSExcel(btnModule.Text);
             Worksheet worksheet_FengMian = workbook.Worksheets["æ≠œ˙…Ã"] as Worksheet;
-            string projectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
+            //string projectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
             for (int i = 2; i < 10000; i++)
             {
                 string userId = msExcelUtil.GetCellValue(worksheet_FengMian, 1, i).ToString();
@@ -204,7 +204,7 @@ namespace XHX.View
                 if (!string.IsNullOrEmpty(userId))
                 {
                     string shopCode = msExcelUtil.GetCellValue(worksheet_FengMian, 2, i).ToString();
-                    webService.SaveUserInfoShop(projectCode,userId,shopCode,UserInfoDto.UserID,StatusTypes.INSERT);
+                    webService.SaveUserInfoShop(_ProjectCode, userId, shopCode, UserInfoDto.UserID, StatusTypes.INSERT);
                 }
             }
             SearchResult();
