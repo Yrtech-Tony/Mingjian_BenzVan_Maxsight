@@ -486,6 +486,8 @@ namespace XHX.View
             { projectCode = "VAN170402"; }
             if (projectCode == "2018Q2")
             { projectCode = "VAN180201"; }
+            if (projectCode == "20180301")
+            { projectCode = "VAN180301"; }
             DirectoryInfo dataDir = new DirectoryInfo(btnDataPath.Text);
             // DirectoryInfo[] dirInfos = dataDir.GetDirectories();
             FileInfo[] fileList = dataDir.GetFiles();
