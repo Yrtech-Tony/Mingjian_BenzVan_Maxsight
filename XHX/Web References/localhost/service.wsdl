@@ -3,6 +3,58 @@
   <wsdl:types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
       <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="SearchBodyData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="salesOrAftersales" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="carType" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="lossCheck" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="score" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="photoScore" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="mScore" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchBodyDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchBodyDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchLeft">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchLeftResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchLeftResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SearchSubjectBySubjectCode">
         <s:complexType>
           <s:sequence>
@@ -4029,6 +4081,42 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SaveShopReportUpload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uploadDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uploadDate2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveShopReportUploadResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchShopReportUploadlList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchShopReportUploadlListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchShopReportUploadlListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="SaveUserInfoShop">
         <s:complexType>
           <s:sequence>
@@ -4182,58 +4270,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="SearchBodyData">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="shopCode" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="province" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="city" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="salesOrAftersales" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="carType" type="s:string" />
-            <s:element minOccurs="1" maxOccurs="1" name="lossCheck" type="s:boolean" />
-            <s:element minOccurs="1" maxOccurs="1" name="score" type="s:boolean" />
-            <s:element minOccurs="1" maxOccurs="1" name="photoScore" type="s:boolean" />
-            <s:element minOccurs="1" maxOccurs="1" name="mScore" type="s:boolean" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SearchBodyDataResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SearchBodyDataResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SearchLeft">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="projectCode" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="SearchLeftResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="SearchLeftResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
     </s:schema>
     <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
       <s:simpleType name="char">
@@ -4241,6 +4277,18 @@
       </s:simpleType>
     </s:schema>
   </wsdl:types>
+  <wsdl:message name="SearchBodyDataSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchBodyData" />
+  </wsdl:message>
+  <wsdl:message name="SearchBodyDataSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchBodyDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchLeftSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchLeft" />
+  </wsdl:message>
+  <wsdl:message name="SearchLeftSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchLeftResponse" />
+  </wsdl:message>
   <wsdl:message name="SearchSubjectBySubjectCodeSoapIn">
     <wsdl:part name="parameters" element="tns:SearchSubjectBySubjectCode" />
   </wsdl:message>
@@ -5555,6 +5603,18 @@
   <wsdl:message name="SearchShopRecordUrlListSoapOut">
     <wsdl:part name="parameters" element="tns:SearchShopRecordUrlListResponse" />
   </wsdl:message>
+  <wsdl:message name="SaveShopReportUploadSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveShopReportUpload" />
+  </wsdl:message>
+  <wsdl:message name="SaveShopReportUploadSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveShopReportUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchShopReportUploadlListSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchShopReportUploadlList" />
+  </wsdl:message>
+  <wsdl:message name="SearchShopReportUploadlListSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchShopReportUploadlListResponse" />
+  </wsdl:message>
   <wsdl:message name="SaveUserInfoShopSoapIn">
     <wsdl:part name="parameters" element="tns:SaveUserInfoShop" />
   </wsdl:message>
@@ -5603,19 +5663,15 @@
   <wsdl:message name="SearchHeadSoapOut">
     <wsdl:part name="parameters" element="tns:SearchHeadResponse" />
   </wsdl:message>
-  <wsdl:message name="SearchBodyDataSoapIn">
-    <wsdl:part name="parameters" element="tns:SearchBodyData" />
-  </wsdl:message>
-  <wsdl:message name="SearchBodyDataSoapOut">
-    <wsdl:part name="parameters" element="tns:SearchBodyDataResponse" />
-  </wsdl:message>
-  <wsdl:message name="SearchLeftSoapIn">
-    <wsdl:part name="parameters" element="tns:SearchLeft" />
-  </wsdl:message>
-  <wsdl:message name="SearchLeftSoapOut">
-    <wsdl:part name="parameters" element="tns:SearchLeftResponse" />
-  </wsdl:message>
   <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="SearchBodyData">
+      <wsdl:input message="tns:SearchBodyDataSoapIn" />
+      <wsdl:output message="tns:SearchBodyDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchLeft">
+      <wsdl:input message="tns:SearchLeftSoapIn" />
+      <wsdl:output message="tns:SearchLeftSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SearchSubjectBySubjectCode">
       <wsdl:input message="tns:SearchSubjectBySubjectCodeSoapIn" />
       <wsdl:output message="tns:SearchSubjectBySubjectCodeSoapOut" />
@@ -6492,6 +6548,14 @@
       <wsdl:input message="tns:SearchShopRecordUrlListSoapIn" />
       <wsdl:output message="tns:SearchShopRecordUrlListSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SaveShopReportUpload">
+      <wsdl:input message="tns:SaveShopReportUploadSoapIn" />
+      <wsdl:output message="tns:SaveShopReportUploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchShopReportUploadlList">
+      <wsdl:input message="tns:SearchShopReportUploadlListSoapIn" />
+      <wsdl:output message="tns:SearchShopReportUploadlListSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="SaveUserInfoShop">
       <wsdl:input message="tns:SaveUserInfoShopSoapIn" />
       <wsdl:output message="tns:SaveUserInfoShopSoapOut" />
@@ -6524,17 +6588,27 @@
       <wsdl:input message="tns:SearchHeadSoapIn" />
       <wsdl:output message="tns:SearchHeadSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="SearchBodyData">
-      <wsdl:input message="tns:SearchBodyDataSoapIn" />
-      <wsdl:output message="tns:SearchBodyDataSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="SearchLeft">
-      <wsdl:input message="tns:SearchLeftSoapIn" />
-      <wsdl:output message="tns:SearchLeftSoapOut" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchBodyData">
+      <soap:operation soapAction="http://tempuri.org/SearchBodyData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLeft">
+      <soap:operation soapAction="http://tempuri.org/SearchLeft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchSubjectBySubjectCode">
       <soap:operation soapAction="http://tempuri.org/SearchSubjectBySubjectCode" style="document" />
       <wsdl:input>
@@ -8506,6 +8580,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SaveShopReportUpload">
+      <soap:operation soapAction="http://tempuri.org/SaveShopReportUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchShopReportUploadlList">
+      <soap:operation soapAction="http://tempuri.org/SearchShopReportUploadlList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SaveUserInfoShop">
       <soap:operation soapAction="http://tempuri.org/SaveUserInfoShop" style="document" />
       <wsdl:input>
@@ -8578,27 +8670,27 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SearchBodyData">
-      <soap:operation soapAction="http://tempuri.org/SearchBodyData" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SearchLeft">
-      <soap:operation soapAction="http://tempuri.org/SearchLeft" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SearchBodyData">
+      <soap12:operation soapAction="http://tempuri.org/SearchBodyData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchLeft">
+      <soap12:operation soapAction="http://tempuri.org/SearchLeft" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SearchSubjectBySubjectCode">
       <soap12:operation soapAction="http://tempuri.org/SearchSubjectBySubjectCode" style="document" />
       <wsdl:input>
@@ -10570,6 +10662,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SaveShopReportUpload">
+      <soap12:operation soapAction="http://tempuri.org/SaveShopReportUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchShopReportUploadlList">
+      <soap12:operation soapAction="http://tempuri.org/SearchShopReportUploadlList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="SaveUserInfoShop">
       <soap12:operation soapAction="http://tempuri.org/SaveUserInfoShop" style="document" />
       <wsdl:input>
@@ -10635,24 +10745,6 @@
     </wsdl:operation>
     <wsdl:operation name="SearchHead">
       <soap12:operation soapAction="http://tempuri.org/SearchHead" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SearchBodyData">
-      <soap12:operation soapAction="http://tempuri.org/SearchBodyData" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="SearchLeft">
-      <soap12:operation soapAction="http://tempuri.org/SearchLeft" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
