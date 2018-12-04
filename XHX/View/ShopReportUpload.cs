@@ -41,10 +41,27 @@ namespace XHX.View
         }
         private void SearchResult()
         {
-            string prjectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
+            string projectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
+            //string projectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
+            if (projectCode == "2017Q1")
+            {
+                projectCode = "VAN170401";
+            }
+            else if (projectCode == "2017Q4-2")
+            {
+                projectCode = "VAN170402";
+            }
+            else if (projectCode == "2018Q2")
+            {
+                projectCode = "VAN180201";
+            }
+            else if (projectCode == "20180301")
+            {
+                projectCode = "VAN180301";
+            }
             string shopCode = btnShopCode.Text;
             List<ShopReportUploadDto> list = new List<ShopReportUploadDto>();
-            DataSet ds = webService.SearchShopReportUploadlList(prjectCode, shopCode);
+            DataSet ds = webService.SearchShopReportUploadlList(projectCode, shopCode);
             if (ds.Tables[0].Rows.Count > 0)
             {
                 for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -53,8 +70,8 @@ namespace XHX.View
                     exam.ProjectCode = Convert.ToString(ds.Tables[0].Rows[i]["ProjectCode"]);
                     exam.ShopCode = Convert.ToString(ds.Tables[0].Rows[i]["ShopCode"]);
                     exam.ShopName = Convert.ToString(ds.Tables[0].Rows[i]["ShopName"]);
-                    
-                    if (ds.Tables[0].Rows[i]["InDateTime"] != DBNull.Value)
+
+                    if (ds.Tables[0].Rows[i]["UploadDate"] != DBNull.Value)
                     {
                         exam.UploadDate = Convert.ToDateTime(ds.Tables[0].Rows[i]["UploadDate"]);
                     }
@@ -62,8 +79,8 @@ namespace XHX.View
                     {
                         exam.UploadDate = null;
                     }
-                   
-                    if (ds.Tables[0].Rows[i]["InDateTime"] != DBNull.Value)
+
+                    if (ds.Tables[0].Rows[i]["UploadDate2"] != DBNull.Value)
                     {
                         exam.UploadDate2 = Convert.ToDateTime(ds.Tables[0].Rows[i]["UploadDate2"]);
                     }
@@ -165,6 +182,22 @@ namespace XHX.View
             Workbook workbook = msExcelUtil.OpenExcelByMSExcel(btnModule.Text);
             Worksheet worksheet_FengMian = workbook.Worksheets["单店报告上传时间"] as Worksheet;
             string projectCode = CommonHandler.GetComboBoxSelectedValue(cboProject).ToString();
+            if (projectCode == "2017Q1")
+            {
+                projectCode = "VAN170401";
+            }
+            else if (projectCode == "2017Q4-2")
+            {
+                projectCode = "VAN170402";
+            }
+            else if (projectCode == "2018Q2")
+            {
+                projectCode = "VAN180201";
+            }
+            else if (projectCode == "20180301")
+            {
+                projectCode = "VAN180301";
+            }
             for (int i = 2; i < 10000; i++)
             {
                 string shopCode = msExcelUtil.GetCellValue(worksheet_FengMian, 1, i).ToString();
